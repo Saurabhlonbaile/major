@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website for Machine C</title>
+</head>
+<body>
+  <h1>Website for Machine C</h1>
+
+  <label for="encryptedMessage">Encrypted Message:</label>
+  <input type="text" id="encryptedMessage" name="encryptedMessage" readonly><br><br>
+
+  <button onclick="decryptMessage()">Decrypt</button><br><br>
+
+  <label for="decryptedMessage">Decrypted Message:</label>
+  <input type="text" id="decryptedMessage" name="decryptedMessage" readonly><br><br>
+
+  <script>
+    function decryptMessage() {
+      var encryptedMessage = document.getElementById('encryptedMessage').value;
+
+      // Send the encrypted message to the backend API
+      // Implement the logic to send the encrypted message to Machine B or AWS Lambda B for decryption
+
+      // Upon receiving the decrypted message from the backend API, update the decrypted message box
+      var decryptedMessage = "Decrypted message will be displayed here";
+      document.getElementById('decryptedMessage').value = decryptedMessage;
+    }
+  </script>
+</body>
+</html>
