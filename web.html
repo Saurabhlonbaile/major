@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Website</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Chat Website</h1>
+
+  <label for="message">Message:</label>
+  <input type="text" id="message" name="message">
+  <button onclick="sendMessage()">Send</button>
+
+  <hr>
+
+  <label for="output">Received Message:</label>
+  <input type="text" id="output" name="output" readonly>
+  <button onclick="decryptMessage()">Decrypt</button>
+
+  <script>
+    function sendMessage() {
+      var message = document.getElementById("message").value;
+      var useCase = document.getElementById("useCase").value;
+
+      // TODO: Implement logic to send the message to the desired destination
+      // based on the selected use case (direct or via Azure Function)
+
+      // Example code to send message using jQuery AJAX
+      $.ajax({
+        url: "destination-url",
+        type: "POST",
+        data: { message: message },
+        success: function (response) {
+          alert("Message sent successfully!");
+        },
+        error: function (xhr, status, error) {
+          alert("Failed to send message: " + error);
+        }
+      });
+    }
+
+    function decryptMessage() {
+      var encryptedMessage = document.getElementById("output").value;
+
+      // TODO: Implement logic to decrypt the encrypted message
+
+      // Example code to decrypt message using jQuery AJAX
+      $.ajax({
+        url: "decrypt-url",
+        type: "POST",
+        data: { message: encryptedMessage, operation: "decrypt" },
+        success: function (response) {
+          document.getElementById("output").value = response;
+        },
+        error: function (xhr, status, error) {
+          alert("Failed to decrypt message: " + error);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
