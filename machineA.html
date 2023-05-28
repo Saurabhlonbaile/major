@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website for Machine A</title>
+</head>
+<body>
+  <h1>Website for Machine A</h1>
+
+  <label for="message">Message:</label>
+  <input type="text" id="message" name="message"><br><br>
+
+  <button onclick="sendMessageToC()">Send to Machine C</button>
+  <button onclick="sendMessageToB()">Send to Machine B</button><br><br>
+
+  <script>
+    function sendMessageToC() {
+      var message = document.getElementById('message').value;
+      var operation = 'direct';
+
+      // Send the message and operation to the backend API
+      // Implement the logic to send the message directly to Machine C
+    }
+
+    function sendMessageToB() {
+      var message = document.getElementById('message').value;
+      var operation = 'encrypt';
+
+      // Send the message and operation to the backend API
+      // Implement the logic to send the message to Machine B for encryption
+    }
+  </script>
+</body>
+</html>
